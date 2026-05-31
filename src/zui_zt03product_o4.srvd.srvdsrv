@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_T03PRODUCT'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_T03PRODUCT'
+  }
+}
+define service ZUI_ZT03PRODUCT_O4 provider contracts odata_v4_ui {
+  expose ZC_T03PRODUCT as Product;
+}

@@ -1,0 +1,136 @@
+managed implementation in class zbp_r_03customer2 unique;
+strict ( 2 );
+with draft;
+extensible;
+with cross associations;
+define behavior for ZR_03CUSTOMER2 alias _Customers
+persistent table zt03customer
+extensible
+draft table zt03customer_d
+etag master LocalLastChangedAt
+lock master total etag LocalLastChangedAt
+authorization master ( global )
+{
+  field ( mandatory : create )
+  CustomerId,
+  Firstname, Lastname;
+  field ( readonly : update )
+  CustomerId,
+  Firstname, Lastname, Street, Postzahl, City, Country;
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Fullname, OrdersSum, Statussum;
+  association _Orders { create ( authorization : global ); with draft; }
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+  mapping for zt03customer corresponding extensible
+    {
+      CustomerId         = customer_id;
+      FirstName          = firstname;
+      LastName           = lastname;
+      Street             = street;
+      Postzahl           = postzahl;
+      City               = city;
+      Country            = country;
+      Fullname           = fullname;
+      OrdersSum          = orderssum;
+      Statussum          = statussum;
+      CreatedAt          = created_at;
+      CreatedBy          = created_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+      LocalLastChangedBy = local_last_changed_by;
+    }
+}
+
+define behavior for ZR_03CUSTOMERORD alias _Orders
+persistent table zt03customerord
+extensible
+draft table zt03customeror_d
+lock dependent by _Customers
+authorization dependent by _Customers
+{
+  field ( readonly )
+  Price,
+  CreatedBy,
+  CreatedAt;
+
+  update;
+  delete;
+
+  field ( readonly : update ) OrderId;
+  field ( readonly ) CustomerId;
+
+  determination setOrderDate on save { create; update; field OrderDate; }
+  determination setInitialStatus on save { create; field Status; }
+
+  association _Customers { with draft; }
+  association _Records { create ( authorization : global ); with draft; }
+
+  mapping for zt03customerord corresponding extensible
+    {
+      OrderId            = order_id;
+      CustomerId         = customer_id;
+      OrderDate          = order_date;
+      Price              = price;
+      Currency           = currency;
+      Status             = status;
+      CreatedAt          = created_at;
+      CreatedBy          = created_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+      LocalLastChangedBy = local_last_changed_by;
+    }
+
+}
+
+define behavior for ZR_03ORDERRECORD alias _Records
+persistent table zt03orderrecord
+extensible
+draft table zt03orderrec_d
+lock dependent by _Customers
+authorization dependent by _Customers
+{
+  field ( mandatory : create )
+  ProductId,
+  Quantity;
+
+  field ( readonly )
+  UnitPrice,
+  CreatedBy,
+  CreatedAt;
+
+  update;
+  delete;
+  field ( readonly : update ) OrderrecordId;
+
+  field ( readonly ) OrderId, CustomerId;
+  association _Customers { with draft; }
+  association _Orders { with draft; }
+  association _Products;
+
+  validation Validateproducttyp on save { create; field ProductId; }
+
+
+//  determination Validaterecords on save { create; field OrderrecordId; }
+  mapping for zt03orderrecord corresponding extensible
+    {
+      OrderrecordId      = orderrecord_id;
+      OrderId            = order_id;
+      CustomerId         = customer_id;
+      ProductId          = product_id;
+      Quantity           = quantity;
+      UnitPrice          = unit_price;
+      CurrencyCode       = currency_code;
+      CreatedAt          = created_at;
+      CreatedBy          = created_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+      LocalLastChangedBy = local_last_changed_by;
+    }
+
+}

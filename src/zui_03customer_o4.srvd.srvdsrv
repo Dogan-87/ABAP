@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition of ZR_03CUSTOMER'
+define service ZUI_03CUSTOMER_O4 {
+  expose ZC_03Customer    as Customer;
+  expose ZC_03CustOrder   as Orders;
+  expose ZC_03ORDERRECORD as Records;
+  expose ZC_T03PRODUCT    as Products;
+}

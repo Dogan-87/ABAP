@@ -1,0 +1,36 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for ZC_03Customer alias _Customers
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+
+  use association _Orders { create; with draft; }
+}
+
+define behavior for ZC_03CustOrder alias _Orders
+{
+  use update;
+  use delete;
+
+  use association _Customers { with draft; }
+  use association _Records { create; with draft; }
+}
+
+define behavior for ZC_03ORDERRECORD alias _Records
+{
+  use update;
+  use delete;
+
+  use association _Customers { with draft; }
+  use association _Orders { with draft; }
+}
