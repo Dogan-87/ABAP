@@ -271,8 +271,8 @@ Key results:
 „Welcher Kunde hat wann welche Bestellungen mit welchem Umsatz getätigt?“
 
 ![Report_Filter](screenshots/Report_Filter.jpg)
-![Report_Filter](screenshots/Report_Filtered_ Customerorders.jpg)
-![Report_Filter](screenshots/Report_Filtered_ Customerorders_2.jpg)
+![Report_Filter](screenshots/Report_Filtered_Customerorders.jpg)
+![Report_Filter](screenshots/Report_Filtered_Customerorders_2.jpg)
 
 ---
 
