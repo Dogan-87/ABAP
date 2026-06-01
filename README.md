@@ -126,8 +126,13 @@ Implemented validations include:
 ![RAP Model](screenshots/Record_Table_Val_2.jpg)
 ![RAP Model](screenshots/Record_Table_Val_3.jpg)
   
-* Quantity must be greater than zero
 * Unit price must be greater than zero
+* Currency must be in predetermined range.
+  
+![RAP Model](screenshots/Product_Table_Val_1.jpg)
+![RAP Model](screenshots/Product_Table_Val_2.jpg)
+![RAP Model](screenshots/Product_Table_Val_3.jpg)
+
 * Order date must not be in the future
 * Customer reference must be valid
 * Product reference must be valid
