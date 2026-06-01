@@ -266,21 +266,19 @@ Key results:
 
 ---
 
-## Screenshots
+## Report
 
-Add screenshots of:
+„Welcher Kunde hat wann welche Bestellungen mit welchem Umsatz getätigt?“
 
-1. Customer List Report
-2. Customer Object Page
-3. Orders Overview
-4. Order Items Overview
-5. Revenue Analytics Page
+![Report_Filter](screenshots/Report_Filter.jpg)
+![Report_Filter](screenshots/Report_Filtered_ Customerorders.jpg)
+![Report_Filter](screenshots/Report_Filtered_ Customerorders_2.jpg)
 
 ---
 
 ## Author
 
-Muster Musterman
+Dogan
 
 Junior SAP ABAP Developer
 
