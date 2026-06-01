@@ -143,6 +143,8 @@ Only paid orders are included in revenue calculations to ensure accurate busines
 * Notes Section
 * Related Orders
 
+![Customer Table](screenshots/Customer_Table.jpg)
+
 Implemented using Fiori Facets and annotation-driven UI design.
 
 ### Orders
@@ -153,12 +155,16 @@ Implemented using Fiori Facets and annotation-driven UI design.
 * Total order value calculation
 * Navigation to order items
 
+![Order Table](screenshots/Order_Table.jpg)
+
 ### Order Items
 
 * Product information
 * Quantity
 * Unit price
 * Calculated line total
+
+![Record Table](screenshots/Record_Table.jpg)
 
 ### Revenue Analytics
 
