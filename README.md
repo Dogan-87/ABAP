@@ -98,6 +98,7 @@ Stores product information and pricing data.
 * Customer → Orders
 * Order → Order Items
 * Order Items → Products
+![RAP Model](screenshots/RAP_Model.jpg)
 
 CDS Associations are used to establish navigation between business objects and support Fiori UI navigation.
 
