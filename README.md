@@ -130,6 +130,8 @@ Implemented validations include:
   
 * Unit price must be greater than zero
 * Currency must be in predetermined range.
+
+[Validation Logic](https://github.com/Dogan-87/ABAP/blob/main/src/zbp_r_t03product.clas.locals_imp.abap#L19-L76)
   
 ![RAP Model](screenshots/Product_Table_Val_1.jpg)
 ![RAP Model](screenshots/Product_Table_Val_2.jpg)
