@@ -145,6 +145,8 @@ Implemented determinations include:
 * Order date must not be in the future
 * Order Status must initially be NEW.
 
+[Determination Logic](https://github.com/Dogan-87/ABAP/blob/main/src/zbp_r_03customer2.clas.locals_imp.abap#L200-L236)
+
 ![RAP Model](screenshots/Order_Table_det_1.jpg)
 ![RAP Model](screenshots/Order_Table_det_2.jpg)
   
