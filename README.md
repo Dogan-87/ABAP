@@ -115,6 +115,25 @@ The application contains several analytical calculations:
 * Revenue aggregation by customer
 * Revenue aggregation by product
 
+### Validations
+
+The application uses RAP validations to ensure data consistency before saving business data.
+Implemented validations include:
+
+* Product Type Validation in Order Records.
+
+![RAP Model](screenshots/Record_Table_Val_1.jpg)
+![RAP Model](screenshots/Record_Table_Val_2.jpg)
+![RAP Model](screenshots/Record_Table_Val_3.jpg)
+  
+* Quantity must be greater than zero
+* Unit price must be greater than zero
+* Order date must not be in the future
+* Customer reference must be valid
+* Product reference must be valid
+* Negative revenue values are not allowed
+
+  
 ### Customer Classification
 
 Customers are categorized based on order volume and business activity.
