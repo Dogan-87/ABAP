@@ -121,6 +121,7 @@ The application uses RAP validations to ensure data consistency before saving bu
 Implemented validations include:
 
 * Product Type Validation in Order Records.
+[Validation Logic]([https://github.com/Dogan-87/ABAP/blob/main/src/zbp_i_customer.clas.abap](https://github.com/Dogan-87/ABAP/blob/main/src/zbp_r_03customer2.clas.locals_imp.abap)#L12-L44)
 
 ![RAP Model](screenshots/Record_Table_Val_1.jpg)
 ![RAP Model](screenshots/Record_Table_Val_2.jpg)
@@ -211,6 +212,8 @@ Implemented using Fiori Facets and annotation-driven UI design.
 
 * Managed Business Objects
 * Behavior Definitions
+* Validations
+* Determinations
 * Service Definitions
 * Service Bindings
 
