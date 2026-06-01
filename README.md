@@ -133,11 +133,16 @@ Implemented validations include:
 ![RAP Model](screenshots/Product_Table_Val_2.jpg)
 ![RAP Model](screenshots/Product_Table_Val_3.jpg)
 
-* Order date must not be in the future
-* Customer reference must be valid
-* Product reference must be valid
-* Negative revenue values are not allowed
+### Determinations
 
+The application uses RAP determinations to automatically calculate and update business values during transactional processing.
+Implemented determinations include:
+
+* Order date must not be in the future
+* Order Status must initially be NEW.
+
+![RAP Model](screenshots/Order_Table_det_1.jpg)
+![RAP Model](screenshots/Order_Table_det_2.jpg)
   
 ### Customer Classification
 
